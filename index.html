@@ -539,15 +539,6 @@
             maxlength="120"
             placeholder="name@beispiel.de"
         /></label>
-        <p
-          id="reservation-hours"
-          class="form-privacy"
-          role="status"
-          aria-live="polite"
-        >
-          Bitte wählen Sie zuerst ein Datum. Di–Do: 17:00–22:00 Uhr · Fr–So:
-          12:00–22:00 Uhr · Montag Ruhetag.
-        </p>
         <div class="form-row">
           <label for="guest-date"
             >Wunschdatum<input
@@ -556,13 +547,7 @@
               type="date"
               required /></label
           ><label for="guest-time"
-            >Uhrzeit<select
-              id="guest-time"
-              name="time"
-              required
-              aria-describedby="reservation-hours"
-              disabled
-            >
+            >Uhrzeit<select id="guest-time" name="time" required disabled>
               <option value="">Bitte wählen</option>
             </select></label
           >

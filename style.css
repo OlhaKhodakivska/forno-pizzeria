@@ -72,3 +72,6 @@ dialog { background: #1b1915; color: #f3eee5; border-color: #756553; }
   .drink-item p { font-size: 13px; }
   .drink-item .price { font-size: 14px; }
 }
+
+/* Horizontal entrances must not create a horizontal page scrollbar. */
+main { overflow-x: clip; }

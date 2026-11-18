@@ -22,6 +22,7 @@ Ein deutschsprachiger Pizzeria-Landingpage-Konzeptentwurf: schwarze Holzstruktur
 - Zusätzliches Restaurantfoto mit gedecktem Tisch, Pizza, Saft und Espresso.
 - Native Dialoge mit Fokus-Rückgabe, Escape-Taste und deutlich beschrifteten Eingabefeldern.
 - Leichte Zoom-out-Animation des Hero-Bildes mit Unterstützung von `prefers-reduced-motion`.
+- Die folgenden Abschnitte erscheinen abwechselnd von links und rechts. Der Effekt wiederholt sich beim erneuten Eintritt in den sichtbaren Bereich; der Hero bleibt unverändert.
 - Neun eigens KI-generierte Bildmotive, lokal als WebP eingebunden.
 - Lokal gehostete Manrope-Schrift und eigenes Favicon.
 

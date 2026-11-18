@@ -59,17 +59,16 @@ function updateTimes() {
   timeField.replaceChildren(new Option("Bitte wählen", ""));
   timeField.disabled = true;
   dateField.setCustomValidity("");
-  const notice = document.getElementById("reservation-hours");
-  notice.textContent = "Bitte wählen Sie zuerst ein Datum. Di–Do: 17:00–22:00 Uhr · Fr–So: 12:00–22:00 Uhr · Montag Ruhetag.";
+
   if (!dateField.value) return;
   const hours = getOpeningHours(dateField.value);
   if (!hours) {
     dateField.setCustomValidity("Montags ist Ruhetag. Bitte wählen Sie einen anderen Tag.");
-    notice.textContent = "Montags ist Ruhetag. Bitte wählen Sie einen anderen Tag.";
+
     return;
   }
-  const start = `${String(hours.start / 60).padStart(2, "0")}:00`;
-  notice.textContent = `An diesem Tag geöffnet: ${start}–22:00 Uhr. Letzte mögliche Anfragezeit: 21:30 Uhr. Die Auswahl bestätigt keine Verfügbarkeit.`;
+
+
   for (let minutes = hours.start; minutes < hours.end; minutes += 30) {
     const time = `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}`;
     if (new Date(`${dateField.value}T${time}:00`).getTime() <= Date.now()) continue;
@@ -78,7 +77,7 @@ function updateTimes() {
   timeField.disabled = timeField.options.length === 1;
   if (timeField.disabled) {
     dateField.setCustomValidity("Heute sind keine Anfragezeiten mehr verfügbar. Bitte wählen Sie einen anderen Tag.");
-    notice.textContent = "Für diesen Tag sind keine zukünftigen Anfragezeiten mehr verfügbar. Bitte wählen Sie ein anderes Datum.";
+
   }
 }
 function openDialog(dialog, trigger) {
@@ -139,3 +138,61 @@ form.addEventListener("submit",event=>{
   const displayDate=new Intl.DateTimeFormat("de-DE",{dateStyle:"long"}).format(appointment);
   status.textContent=`Ihre Demo-Anfrage für den ${displayDate} um ${timeField.value} Uhr ist vollständig. Es wurde nichts versendet und kein Tisch reserviert.`;
 });
+
+// Observe stationary sections; animate their contents so movement cannot
+// accidentally trigger another intersection and make the section flicker.
+(() => {
+  if (!("IntersectionObserver" in window) || !Element.prototype.animate) return;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const sections = [...document.querySelectorAll("main > section:not(.hero), main > figure")];
+  const active = new Map();
+  const visible = new Set();
+
+  function cancelSection(section) {
+    (active.get(section) || []).forEach(animation => animation.cancel());
+    active.delete(section);
+  }
+  function animateSection(section) {
+    cancelSection(section);
+    const index = sections.indexOf(section);
+    const distance = window.matchMedia("(max-width: 700px)").matches ? 32 : 64;
+    const offset = index % 2 === 0 ? -distance : distance;
+    const targets = section.matches(".ingredients")
+      ? [section.querySelector(".ingredients-inner")]
+      : section.matches(".gather")
+        ? [section.querySelector(".gather-inner")]
+        : [...section.children];
+    const animations = targets.filter(Boolean).map(target => target.animate([
+      { opacity: 0, transform: `translateX(${offset}px)` },
+      { opacity: 1, transform: "translateX(0)" },
+    ], {
+      duration: 950,
+      easing: "cubic-bezier(.16, 1, .3, 1)",
+    }));
+    active.set(section, animations);
+    Promise.allSettled(animations.map(animation => animation.finished)).then(() => {
+      if (active.get(section) === animations) active.delete(section);
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (!visible.has(entry.target) && !reducedMotion.matches) animateSection(entry.target);
+        visible.add(entry.target);
+      } else {
+        visible.delete(entry.target);
+        cancelSection(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -24px 0px", threshold: 0 });
+
+  function configureMotion() {
+    observer.disconnect();
+    sections.forEach(cancelSection);
+    visible.clear();
+    if (!reducedMotion.matches) sections.forEach(section => observer.observe(section));
+  }
+  reducedMotion.addEventListener("change", configureMotion);
+  configureMotion();
+})();
