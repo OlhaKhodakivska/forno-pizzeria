@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>FORNO — Pizza & gute Gesellschaft</title>
+    <meta
+      name="description"
+      content="FORNO – ein Pizzeria-Konzept mit italienischem Lebensgefühl, Pizza aus dem Steinofen und Platz für die ganze Familie. Entdecken Sie die Speisekarte."
+    />
+    <meta name="theme-color" content="#20201d" />
+    <meta property="og:title" content="FORNO — Pizza & gute Gesellschaft" />
+    <meta
+      property="og:description"
+      content="Ein Stück Italien. Ein Tisch für alle. Ein eigenständiges Pizzeria-Konzept von Olha Khodakivska."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link
+      rel="preload"
+      href="./fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="header" id="top">
+      <div class="header-inner page-width">
+        <a class="brand" href="#start" aria-label="FORNO – Startseite"
+          >FORNO<span>PIZZA & BUONA COMPAGNIA</span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="navigation"
+          hidden
+        >
+          <span></span><span></span>
+        </button>
+        <nav id="navigation" class="navigation" aria-label="Hauptnavigation">
+          <a href="#geschichte">Über uns</a
+          ><a href="#speisekarte">Speisekarte</a
+          ><a href="#besuch">Ihr Besuch</a>
+          <button class="button button-small" type="button" data-reserve>
+            Tisch anfragen
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" id="start" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="./images/hero.webp"
+          width="1536"
+          height="1024"
+          alt="Ein Pizzaiolo präsentiert eine frisch gebackene Pizza mit Tomaten, Mozzarella und Basilikum"
+          fetchpriority="high"
+        />
+        <div class="hero-inner page-width">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="small-line"></span> EIN STÜCK ITALIEN. MITTEN IN
+              BERLIN.
+            </p>
+            <h1 id="hero-title">
+              Gute Pizza.<br />Noch bessere<br /><em>Gesellschaft.</em>
+            </h1>
+            <p class="hero-description">
+              Knuspriger Rand. Ein warmes Willkommen.<br />Und immer noch Platz
+              für einen mehr.
+            </p>
+            <a class="button button-outline" href="#speisekarte"
+              >Speisekarte entdecken</a
+            >
+            <p class="hero-caption">Pizza, Pasta & gemeinsame Momente.</p>
+          </div>
+        </div>
+        <span class="hero-side-note" aria-hidden="true">BUON APPETITO.</span>
+      </section>
+
+      <section
+        class="quick-links page-width"
+        aria-label="Unsere Pizzeria entdecken"
+      >
+        <a href="#geschichte"
+          ><span class="category-icon" aria-hidden="true">♡</span
+          ><strong>Am liebsten zusammen.</strong
+          ><span>Die Idee hinter FORNO</span></a
+        >
+        <a href="#zutaten"
+          ><span class="category-icon leaf-icon" aria-hidden="true"></span
+          ><strong>Weniger. Dafür gut.</strong><span>Unsere Zutaten</span></a
+        >
+        <a href="#speisekarte"
+          ><span class="category-icon pizza-icon" aria-hidden="true"></span
+          ><strong>Ein Stück Glück.</strong
+          ><span>Pizza aus dem Steinofen</span></a
+        >
+        <a href="#speisekarte" data-menu-link="pasta"
+          ><span class="category-icon pasta-icon" aria-hidden="true">≋</span
+          ><strong>La dolce Pasta.</strong><span>Unsere Pasta-Auswahl</span></a
+        >
+      </section>
+
+      <section
+        class="story page-width section"
+        id="geschichte"
+        aria-labelledby="story-title"
+      >
+        <div class="story-photo">
+          <img
+            src="./images/trattoria.webp"
+            alt="Eine gemütliche Trattoria mit Terrakotta-Wänden, Holztischen und warm leuchtendem Pizzaofen"
+            width="1536"
+            height="1024"
+            loading="lazy"
+          /><span class="photo-label"
+            >Hier bleibt man gern noch ein bisschen.</span
+          >
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">CIAO, WIR SIND FORNO.</p>
+          <h2 id="story-title">Ein Tisch.<br />Viele Geschichten.</h2>
+          <p>
+            Manche Abende brauchen nicht viel: gutes Essen, vertraute Gesichter
+            und einen Ort, an dem man sich sofort wohlfühlt.
+          </p>
+          <p>
+            Genau dafür steht FORNO. Für die große Runde nach Feierabend, das
+            erste Date und den Familienabend mit extra Käse. Italienisches
+            Lebensgefühl, ganz ohne große Worte.
+          </p>
+          <button class="text-button" type="button" data-reserve>
+            Wir halten einen Platz für Sie frei.
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="ingredients"
+        id="zutaten"
+        aria-labelledby="ingredients-title"
+      >
+        <div class="page-width ingredients-inner">
+          <p class="eyebrow">UNSER REZEPT IST EINFACH.</p>
+          <h2 id="ingredients-title">
+            Gute Dinge brauchen<br />keine lange Zutatenliste.
+          </h2>
+          <div class="ingredient-grid">
+            <article>
+              <span aria-hidden="true">Teig.</span>
+              <h3>Mit Ruhe gemacht.</h3>
+              <p>
+                Ein luftiger Rand, eine feine Kruste und ein Teig, der Zeit
+                bekommt, seinen Geschmack zu entwickeln.
+              </p>
+            </article>
+            <article>
+              <span aria-hidden="true">Tomate.</span>
+              <h3>Sonnig im Geschmack.</h3>
+              <p>
+                Fruchtige Tomaten, cremiger Mozzarella und frisches Basilikum.
+                Die Klassiker haben einen guten Grund.
+              </p>
+            </article>
+            <article>
+              <span aria-hidden="true">Ofen.</span>
+              <h3>Heiß geliebt.</h3>
+              <p>
+                Direkt aus dem Steinofen auf den Tisch. Am besten mit guten
+                Freunden und ohne jeden Zeitdruck.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="menu-section section page-width"
+        id="speisekarte"
+        aria-labelledby="menu-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FÜR DEN KLEINEN UND DEN GROSSEN HUNGER.</p>
+            <h2 id="menu-title">Was darf’s sein?</h2>
+          </div>
+          <p>
+            Zum Teilen. Oder ganz für Sie.<br />Unsere kleine Auswahl an
+            Lieblingsgerichten.
+          </p>
+        </div>
+        <div class="menu-layout">
+          <figure class="menu-photo">
+            <img
+              src="./images/margherita.webp"
+              alt="Pizza Margherita mit luftigem Rand, Mozzarella, Tomaten und frischem Basilikum"
+              width="1254"
+              height="1254"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>Il classico.</span> Wenige Zutaten. Viel Amore.
+            </figcaption>
+          </figure>
+          <div class="menu-content">
+            <div
+              class="menu-filters"
+              role="group"
+              aria-label="Speisekarte filtern"
+            >
+              <button type="button" data-filter="pizza" aria-pressed="true">
+                Pizza</button
+              ><button type="button" data-filter="pasta" aria-pressed="false">
+                Pasta</button
+              ><button type="button" data-filter="dolci" aria-pressed="false">
+                Dolci
+              </button>
+              <button type="button" data-filter="drinks" aria-pressed="false">
+                Getränke
+              </button>
+            </div>
+            <div class="menu-items" id="menu-items" aria-live="polite">
+              <article class="menu-item" data-category="pizza">
+                <div>
+                  <h3>
+                    Margherita <span class="diet-label">vegetarisch</span>
+                  </h3>
+                  <p>Tomate, Fior di Latte, Basilikum, Olivenöl</p>
+                </div>
+                <span class="price">11,50 €</span>
+              </article>
+              <article class="menu-item" data-category="pizza">
+                <div>
+                  <h3>Salame</h3>
+                  <p>Tomate, Fior di Latte, italienische Salami</p>
+                </div>
+                <span class="price">13,50 €</span>
+              </article>
+              <article class="menu-item" data-category="pizza">
+                <div>
+                  <h3>Verdure <span class="diet-label">vegetarisch</span></h3>
+                  <p>Tomate, Fior di Latte, Zucchini, Paprika, Champignons</p>
+                </div>
+                <span class="price">13,90 €</span>
+              </article>
+              <article class="menu-item" data-category="pizza">
+                <div>
+                  <h3>Diavola</h3>
+                  <p>Tomate, Fior di Latte, pikante Salami, Chili</p>
+                </div>
+                <span class="price">14,50 €</span>
+              </article>
+              <article class="menu-item" data-category="pizza">
+                <div>
+                  <h3>Piccola Margherita</h3>
+                  <p>Unsere kleine Pizza für kleine Lieblingsmenschen</p>
+                </div>
+                <span class="price">7,50 €</span>
+              </article>
+              <article class="menu-item" data-category="pasta" hidden>
+                <div>
+                  <h3>
+                    Penne al Pomodoro <span class="diet-label">vegan</span>
+                  </h3>
+                  <p>Penne, fruchtige Tomatensauce, Basilikum</p>
+                </div>
+                <span class="price">11,90 €</span>
+              </article>
+              <article class="menu-item" data-category="pasta" hidden>
+                <div>
+                  <h3>Tagliatelle ai Funghi</h3>
+                  <p>Tagliatelle, Champignons, cremige Sauce, Hartkäse</p>
+                </div>
+                <span class="price">14,90 €</span>
+              </article>
+              <article class="menu-item" data-category="pasta" hidden>
+                <div>
+                  <h3>Spaghetti Bolognese</h3>
+                  <p>Spaghetti, langsam gekochtes Rindfleischragù, Hartkäse</p>
+                </div>
+                <span class="price">14,50 €</span>
+              </article>
+              <article class="menu-item" data-category="dolci" hidden>
+                <div>
+                  <h3>Tiramisù</h3>
+                  <p>Mascarponecreme, Espresso, Kakao · mit Alkohol</p>
+                </div>
+                <span class="price">6,50 €</span>
+              </article>
+              <article class="menu-item" data-category="drinks" hidden>
+                <div>
+                  <h3>Espresso · 0,04 l</h3>
+                  <p>Der kleine Abschluss, der immer passt</p>
+                </div>
+                <span class="price">2,80 €</span>
+              </article>
+              <article class="menu-item" data-category="drinks" hidden>
+                <div>
+                  <h3>Hauslimonade · 0,4 l</h3>
+                  <p>Zitrone, frische Minze, sprudelndes Wasser</p>
+                </div>
+                <span class="price">4,90 €</span>
+              </article>
+              <article
+                class="menu-item drink-item"
+                data-category="drinks"
+                hidden
+              >
+                <img
+                  src="./images/drink-juice.webp"
+                  width="640"
+                  height="640"
+                  alt="Ein Glas Orangensaft auf dunklem Holz"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <h3>Säfte · 0,3 l</h3>
+                  <p>Orange oder Apfel – fruchtig und erfrischend</p>
+                </div>
+                <span class="price">4,50 €</span>
+              </article>
+              <article
+                class="menu-item drink-item"
+                data-category="drinks"
+                hidden
+              >
+                <img
+                  src="./images/drink-coffee.webp"
+                  width="640"
+                  height="640"
+                  alt="Cappuccino mit Latte Art in einer hellen Keramiktasse"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <h3>Cappuccino · 0,2 l</h3>
+                  <p>Espresso mit cremigem Milchschaum · koffeinhaltig</p>
+                </div>
+                <span class="price">3,90 €</span>
+              </article>
+              <article
+                class="menu-item drink-item"
+                data-category="drinks"
+                hidden
+              >
+                <img
+                  src="./images/drink-tea.webp"
+                  width="640"
+                  height="640"
+                  alt="Warmer Kräutertee mit Minze und Zitrone in einer Glastasse"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <h3>Tee · 0,3 l</h3>
+                  <p>Schwarztee, Grüntee oder Kräutertee nach Wahl</p>
+                </div>
+                <span class="price">3,20 €</span>
+              </article>
+              <article
+                class="menu-item drink-item"
+                data-category="drinks"
+                hidden
+              >
+                <img
+                  src="./images/drink-cola.webp"
+                  width="640"
+                  height="640"
+                  alt="Ein Glas Cola mit Eis und einer Zitronenscheibe"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <h3>Coca-Cola · 0,33 l</h3>
+                  <p>Mit Eis und Zitrone · koffeinhaltig, mit Farbstoff</p>
+                </div>
+                <span class="price">3,90 €</span>
+              </article>
+            </div>
+            <p class="menu-note">
+              Alle Preise in Euro inkl. MwSt. · Beispielkarte eines fiktiven
+              Restaurants. Bei einem echten Betrieb erhalten Sie vor der
+              Bestellung Auskunft zu Allergenen und Zusatzstoffen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <figure class="table-moment page-width">
+        <img
+          src="./images/pizza-table.webp"
+          width="1536"
+          height="1024"
+          loading="lazy"
+          alt="Ein gedeckter Restauranttisch mit großer Pizza Margherita, Leinenservietten, Orangensaft in Gläsern und einem Espresso"
+        />
+        <figcaption>
+          Ein guter Abend beginnt mit einem gedeckten Tisch.
+        </figcaption>
+      </figure>
+
+      <section class="gather">
+        <div class="page-width gather-inner">
+          <p class="eyebrow">GUT ESSEN. LANGE REDEN.</p>
+          <h2>Der beste Platz?<br />Mitten unter Freunden.</h2>
+          <button type="button" class="button button-cream" data-reserve>
+            Tisch anfragen
+          </button>
+          <p>Für zwei, für vier oder die ganze Familie.</p>
+        </div>
+        <span class="gather-word" aria-hidden="true">insieme.</span>
+      </section>
+
+      <section
+        class="visit section page-width"
+        id="besuch"
+        aria-labelledby="visit-title"
+      >
+        <div class="visit-copy">
+          <p class="eyebrow">BIS GLEICH BEI FORNO.</p>
+          <h2 id="visit-title">Einfach<br />vorbeikommen.</h2>
+          <p>
+            Ein kurzer Weg zu einem langen Abend.<br />Wir freuen uns auf gute
+            Gesellschaft.
+          </p>
+          <button class="button" type="button" data-reserve>
+            Tisch anfragen
+          </button>
+        </div>
+        <div class="visit-details">
+          <div>
+            <h3>Hier wären wir zu Hause</h3>
+            <address>Musterstraße 12<br />10115 Berlin, Deutschland</address>
+            <small>Fiktive Adresse für dieses Portfolio-Konzept.</small>
+          </div>
+          <div>
+            <h3>Unsere Beispiel-Öffnungszeiten</h3>
+            <dl class="hours">
+              <div>
+                <dt>Montag</dt>
+                <dd>Ruhetag</dd>
+              </div>
+              <div>
+                <dt>Dienstag – Donnerstag</dt>
+                <dd>17:00 – 22:00 Uhr</dd>
+              </div>
+              <div>
+                <dt>Freitag – Sonntag</dt>
+                <dd>12:00 – 22:00 Uhr</dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h3>Ein kurzer Anruf</h3>
+            <button
+              class="demo-phone text-button"
+              type="button"
+              id="demo-phone"
+            >
+              +49 (0)30 23125 000</button
+            ><small>Demonstrationsnummer · kein realer Telefonkontakt.</small>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="page-width footer-inner">
+        <a class="brand" href="#start"
+          >FORNO<span>PIZZA & BUONA COMPAGNIA</span></a
+        >
+        <p>Ein Tisch für alle.</p>
+        <a href="#top" class="footer-top">Nach oben</a>
+      </div>
+      <div class="page-width concept-note">
+        <span
+          >© <span id="year">2026</span> FORNO · Portfolio-Konzept von Olha
+          Khodakivska.</span
+        ><span
+          >Fiktives Restaurant. KI-generierte Bilder. Keine echten
+          Buchungen.</span
+        >
+      </div>
+    </footer>
+    <a
+      class="back-to-top"
+      href="#top"
+      aria-label="Zum Seitenanfang"
+      title="Nach oben"
+      ><span aria-hidden="true">↑</span></a
+    >
+
+    <dialog
+      id="reservation-dialog"
+      class="reservation-dialog"
+      aria-labelledby="reservation-title"
+      aria-describedby="reservation-description"
+    >
+      <button
+        type="button"
+        class="dialog-close"
+        aria-label="Reservierungsformular schließen"
+      >
+        ×
+      </button>
+      <p class="eyebrow">WIR FREUEN UNS AUF SIE.</p>
+      <h2 id="reservation-title">Ein Tisch für Sie.</h2>
+      <p id="reservation-description">
+        Wählen Sie Ihren Wunschtermin. Dies ist eine Demo – es wird keine echte
+        Reservierung angelegt.
+      </p>
+      <form id="reservation-form">
+        <label for="guest-name"
+          >Ihr Name<input
+            id="guest-name"
+            name="name"
+            autocomplete="name"
+            required
+            minlength="2"
+            maxlength="80" /></label
+        ><label for="guest-email"
+          >E-Mail-Adresse<input
+            id="guest-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            maxlength="120"
+            placeholder="name@beispiel.de"
+        /></label>
+        <p
+          id="reservation-hours"
+          class="form-privacy"
+          role="status"
+          aria-live="polite"
+        >
+          Bitte wählen Sie zuerst ein Datum. Di–Do: 17:00–22:00 Uhr · Fr–So:
+          12:00–22:00 Uhr · Montag Ruhetag.
+        </p>
+        <div class="form-row">
+          <label for="guest-date"
+            >Wunschdatum<input
+              id="guest-date"
+              name="date"
+              type="date"
+              required /></label
+          ><label for="guest-time"
+            >Uhrzeit<select
+              id="guest-time"
+              name="time"
+              required
+              aria-describedby="reservation-hours"
+              disabled
+            >
+              <option value="">Bitte wählen</option>
+            </select></label
+          >
+        </div>
+        <label for="guest-count"
+          >Anzahl der Personen<select id="guest-count" name="guests" required>
+            <option value="">Bitte wählen</option>
+            <option value="1">1 Person</option>
+            <option value="2">2 Personen</option>
+            <option value="3">3 Personen</option>
+            <option value="4">4 Personen</option>
+            <option value="5">5 Personen</option>
+            <option value="6">6 Personen</option>
+            <option value="group">Größere Gruppe</option>
+          </select></label
+        ><label for="guest-note"
+          >Ihre Wünsche <span class="optional">(optional)</span
+          ><textarea
+            id="guest-note"
+            name="note"
+            rows="2"
+            maxlength="1000"
+            placeholder="Zum Beispiel: ein Platz für den Kinderwagen"
+          ></textarea></label
+        ><button class="button" type="submit">Anfrage prüfen</button>
+        <p
+          class="form-status"
+          id="reservation-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <p class="form-privacy">
+          Ihre Eingaben bleiben nur in dieser geöffneten Seite. Es werden keine
+          Daten versendet oder gespeichert.
+        </p>
+      </form>
+    </dialog>
+    <dialog id="demo-dialog" class="demo-dialog" aria-labelledby="demo-title">
+      <button class="dialog-close" type="button" aria-label="Hinweis schließen">
+        ×
+      </button>
+      <h2 id="demo-title">Nur ein kleiner Vorgeschmack.</h2>
+      <p>
+        FORNO ist ein fiktives Restaurant für ein Webdesign-Portfolio. Die
+        Telefonnummer und Adresse sind Demonstrationsangaben. Es wird kein Anruf
+        gestartet.
+      </p>
+      <button type="button" class="button" id="demo-dismiss">Verstanden</button>
+    </dialog>
+  </body>
+</html>
